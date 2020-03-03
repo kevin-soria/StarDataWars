@@ -13,13 +13,17 @@ export const Home = () => (
 			</a>
 		</div>
 		<div>
-			<div className="card" style={{ width: "18 rem" }}>
-				<div className="card-header">Featured</div>
-				<ul className="list-group list-group-flush">
-					<Link to="/planetCards">
-						<li className="list-group-item">Planets</li>
-					</Link>
-				</ul>
+			<div className="container">
+				<div className="row">
+					<div className="card" style={{ width: "18 rem" }}>
+						<div className="card-header">Types</div>
+						<ul className="list-group list-group-flush">
+							<Link to="/planetCards">
+								<li className="list-group-item">Planets</li>
+							</Link>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</>

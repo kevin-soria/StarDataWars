@@ -23,12 +23,20 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			fetch("http https://swapi.co/api/")
+			fetch("https://swapi.co/api/planets/")
 				.then(res => res.json())
-				.then(data => setState(data))
+				.then(data => {
+					let { store } = state;
+					setState({ store: { ...store, planets: data.results } });
+				});
+		}, []);
 
-				.catch(function(error) {
-					console.log("Looks like there was a problem: \n", error);
+		useEffect(() => {
+			fetch("https://swapi.co/api/people/")
+				.then(res => res.json())
+				.then(data => {
+					let { store } = state;
+					setState({ store: { ...store, people: data.results } });
 				});
 		}, []);
 
